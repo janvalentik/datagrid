@@ -34,7 +34,7 @@ final class HomepagePresenter extends Nette\Application\UI\Presenter
         $grid->addColumnDateTime('date', 'Datum')->setformat('d.m.Y');
         $grid->addFilterDateRange('date', 'Datum:', 'date')->setFormat('Y-m-d', 'd. m. yyyy');
         $grid->setOuterFilterRendering();
-        $grid->setDefaultFilter(['date' => ['from' => $this->from, 'to' => $this->to]]);
+        $grid->filter = ['date' => ['from' => $this->from, 'to' => $this->to]];
         return $grid;
     }
 
